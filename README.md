@@ -2,7 +2,7 @@
 
 <p align="center"><b>A portable personal AI assistant you can make your own.</b><br>Download. Unzip. Open your folder. Start a conversation.</p>
 
-<p align="center"><a href="https://github.com/jjackson-vsg/vesta-companion/releases/download/v0.1.0-beta.1/vesta-companion.zip"><b>↓ DOWNLOAD VESTA COMPANION</b></a> &nbsp; · &nbsp; <a href="docs/Quick-start.pdf">Read the PDF guide</a> &nbsp; · &nbsp; <a href="https://github.com/jjackson-vsg/vesta-companion/releases">Release notes</a></p>
+<p align="center"><a href="https://github.com/jjackson-vsg/vesta-companion/releases/download/v0.1.0-beta.2/vesta-companion.zip"><b>↓ DOWNLOAD VESTA COMPANION</b></a> &nbsp; · &nbsp; <a href="docs/Quick-start.pdf">Read the PDF guide</a> &nbsp; · &nbsp; <a href="https://github.com/jjackson-vsg/vesta-companion/releases">Release notes</a></p>
 
 > **Beta preview.** Designed for local desktop agents. Technical tests and signed-in app testing are different: check [compatibility](docs/COMPATIBILITY.md) and [test evidence](docs/TESTING.md). Use your organisation's approved app and account. Downloads become available when the release is published.
 

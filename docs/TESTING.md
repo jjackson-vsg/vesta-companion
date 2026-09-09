@@ -1,6 +1,6 @@
 # Test evidence
 
-Version: 0.1.0-beta.1
+Version: 0.1.0-beta.2
 Checked: 2026-09-09
 Status: local technical checks passed; signed-in app and Microsoft 365 pilot pending.
 
@@ -40,3 +40,7 @@ python scripts/build.py --check --package
 ```
 
 Python 3.10+ suffices for the helper and release tests. The browser and PDF scripts require an already installed Playwright module and Microsoft Edge, and do not download dependencies. Set NODE_PATH to that module's parent folder if needed. These are maintainer commands; ordinary users start by chatting with their approved agent.
+
+## Guide-only revision: beta.2
+
+Added the repository address and a direct ZIP download link to the Get started page in both HTML and PDF. Runtime code and skills are unchanged from beta.1; their earlier test evidence still applies. The revised guide passed layout and clickable PDF-link checks. Pages 1–2 were visually inspected; rendered pages 3–12 match the previously reviewed pages byte-for-byte. All 17 Python tests and the browser checks were rerun and passed.
