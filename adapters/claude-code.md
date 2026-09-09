@@ -1,0 +1,1 @@
+Read system/COMPANION.md and skills/INDEX.md in the local project folder. Follow CLAUDE.md and offer guided setup when personal/profile.md is missing. Use a local folder for personal memory, and avoid concurrent writers. Save work under personal/. Native skill wrappers are under .claude/skills; do not change global app settings or bypass permissions.

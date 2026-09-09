@@ -1,0 +1,13 @@
+# Welcome to Vesta Companion
+
+Your personal assistant, with a memory you can keep.
+
+Open START-HERE.html for the illustrated quick start and full user guide.
+
+In your approved desktop agent, open this folder as a LOCAL project, then say:
+
+> Read START-HERE.md and system/COMPANION.md. Help me set up my Vesta Companion.
+
+Agent: read system/COMPANION.md, then skills/companion-setup/SKILL.md. Offer setup if personal/profile.md is missing. Save personal information only under personal/. Do not needlessly repeat completed onboarding. If the app cannot read and write this local folder, explain the limitation before collecting personal details. Do not claim setup is saved without a successful read-back.
+
+The core kit needs no command-line work from the user. The selected AI app and optional connections need an approved account and may require installation, subscription or administrator help. This is a beta; see docs/COMPATIBILITY.md for verified tests and remaining pilot work.

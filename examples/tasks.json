@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "revision": 0,
+  "updatedAt": "2026-09-09T08:00:00Z",
+  "tasks": [
+    {
+      "id": "demo-1",
+      "title": "Prepare the weekly team update",
+      "notes": "Pull together the decisions, progress and questions that need a conversation.",
+      "project": "Team rhythm",
+      "owner": "You",
+      "due": "",
+      "priority": "high",
+      "status": "doing",
+      "source": "Fictional example",
+      "updatedAt": "2026-09-09T08:00:00Z"
+    },
+    {
+      "id": "demo-2",
+      "title": "Review the onboarding checklist",
+      "notes": "Check that a new colleague can find the essentials without asking around.",
+      "project": "New starter",
+      "owner": "You",
+      "due": "",
+      "priority": "normal",
+      "status": "todo",
+      "source": "Fictional example",
+      "updatedAt": "2026-09-09T08:00:00Z"
+    },
+    {
+      "id": "demo-3",
+      "title": "Follow up on the draft agenda",
+      "notes": "Waiting for feedback before finalising the session.",
+      "project": "Workshop",
+      "owner": "Example colleague",
+      "due": "",
+      "priority": "normal",
+      "status": "waiting",
+      "source": "Fictional example",
+      "updatedAt": "2026-09-09T08:00:00Z"
+    },
+    {
+      "id": "demo-4",
+      "title": "Set up your Companion",
+      "notes": "A name, a preference and a first useful task.",
+      "project": "Getting started",
+      "owner": "You",
+      "due": "",
+      "priority": "low",
+      "status": "done",
+      "source": "Fictional example",
+      "updatedAt": "2026-09-09T08:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# Private user state must never be committed
+/personal/
+/.work/
+/dist/
+/backups/
+*.local.*
+.env
+.env.*
+!.env.example
+__pycache__/
+node_modules/
+.DS_Store
+Thumbs.db
+.obsidian/
