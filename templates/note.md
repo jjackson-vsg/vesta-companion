@@ -1,9 +1,12 @@
+---
+type: knowledge
+created: "{{date}}"
+updated: "{{date}}"
+source: "user"
+confidence: confirmed
+status: current
+---
 # Note title
-
-Date: YYYY-MM-DD
-Type: preference / knowledge / decision
-Source: user statement or safe stable reference
-Confidence: confirmed / inferred / uncertain
 
 ## What to remember
 

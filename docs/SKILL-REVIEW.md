@@ -1,6 +1,6 @@
 # Bundled skill review
 
-Scope: nine original instruction-only skills, version 0.1.0-beta.1. No third-party skill code, hooks or installers bundled. Review is local technical/behavioural inspection, not independent certification.
+Scope: nine original instruction-only skills, release 0.1.0-beta.3 (individual unchanged skills retain their prior version). No third-party skill code, hooks or installers bundled. Review is local technical/behavioural inspection, not independent certification.
 
 All skill instructions were reviewed for triggers, personal output paths, missing-access behaviour, source provenance, approval boundaries and no secret capture. The daily-brief skill explicitly prohibits Microsoft 365 mutations, requires separate source coverage, pagination disclosure and safe per-source cutoffs. New personal skills have an independent review status and do not inherit this review.
 
@@ -19,3 +19,5 @@ Functional source-code tests cover the task helper and board. Agent behaviour st
 | Custom skill requests new external action | Show proposal and obtain approval | Pending app pilot |
 
 These gaps are why the first release is a beta preview. Do not claim an organisation-wide supported or security-certified rollout before the pilot and release review.
+
+Beta.3 review: memory/setup now create an additive vault starter and date/source/confidence metadata; existing notes and Obsidian settings are preserved. Care/review add optional due backup reminders with snooze and no background copying. These instruction changes remain subject to the signed-in pilot scenarios above.

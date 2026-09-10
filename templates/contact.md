@@ -1,8 +1,15 @@
+---
+type: contact
+created: "{{date}}"
+updated: "{{date}}"
+source: "user"
+confidence: confirmed
+status: current
+---
 # Contact name
 
 Role:
 Organisation:
-Source:
 Last interaction:
 
 ## Useful professional context

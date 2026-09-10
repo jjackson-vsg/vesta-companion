@@ -2,7 +2,9 @@
 
 Your personal assistant, with a memory you can keep.
 
-Open START-HERE.html for the illustrated quick start and full user guide.
+Open START-HERE.html for the illustrated quick start and full user guide. Or read it online at https://vesta-software-group.github.io/vesta-companion/guide.html.
+
+Get the newest kit from https://github.com/Vesta-Software-Group/vesta-companion/releases. Open a release and choose vesta-companion.zip under Assets.
 
 In your approved desktop agent, open this folder as a LOCAL project, then say:
 

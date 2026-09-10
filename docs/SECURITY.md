@@ -10,4 +10,8 @@ Skill vetting: read complete instructions and referenced scripts, inspect access
 
 Task imports require matching base revision and exact source hash; conflicts require reconciliation. Browser-rendered text uses textContent, not executable HTML. The file picker only writes a file selected by the user and rechecks it before writing. One active writer remains required: OS/browser APIs do not offer a universal cross-app lock.
 
-Report vulnerabilities privately using the repository owner's established private contact route. Do not put exploitable details, credentials or work data in public issues. Private GitHub vulnerability reporting may depend on repository settings; it is not claimed enabled here.
+Report vulnerabilities privately using [GitHub private reporting](https://github.com/Vesta-Software-Group/vesta-companion/security/advisories/new). See the root [SECURITY.md](../SECURITY.md). Do not include work data or credentials in reports.
+
+The optional Claude settings template adds approvals and narrow direct-file deny rules; it is not active by default or a comprehensive sandbox. See [CLAUDE-GUARDRAILS.md](CLAUDE-GUARDRAILS.md).
+
+Repository CI runs tests with read-only source permissions on pull requests. A separate Pages workflow publishes only the allowlisted guide and fictional demo files from main. It cannot publish a GitHub release or personal memory.

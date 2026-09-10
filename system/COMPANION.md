@@ -10,9 +10,9 @@
 
 ## Ownership and persistence
 
-All user data belongs in personal/: profile.md, HANDOVER.md, vault/, projects/, outputs/, skills/, journals/ and automations/. Keep facts and tasks in one authoritative place. Reference original notes rather than creating contradictory copies. The to-do source is personal/todo/tasks.json; board.html is a generated view. Never silently overwrite newer task state from an old board or export.
+All user data belongs in personal/: profile.md, HANDOVER.md, vault/, projects/, outputs/, skills/ and automations/. Dated memory journals live in personal/vault/journal; preserve older personal/journals records in place. Keep facts and tasks in one authoritative place. Reference original notes rather than creating contradictory copies. The to-do source is personal/todo/tasks.json; board.html is a generated view. Never silently overwrite newer task state from an old board or export.
 
-Create folders only as needed. Use templates with actual user-confirmed information, never fictional demo facts. Facts need a date and source; label interpretation and uncertainty. Draft messages remain drafts. Save durable preferences, decisions, commitments, contacts, project status and deliverables; do not dump every conversation or store credentials. User corrections supersede obsolete facts with an explanation and retained history.
+Create folders only as needed. Use templates with actual user-confirmed information, never fictional demo facts. Read personal/vault/vault-conventions.md for note placement and frontmatter. Facts need a date and source; label interpretation and uncertainty. Draft messages remain drafts. Save durable preferences, decisions, commitments, contacts, project status and deliverables; do not dump every conversation or store credentials. User corrections supersede obsolete facts with an explanation and retained history.
 
 Before replacing a file, re-read it, compare against the version you used, and stop on concurrent changes. Write a temporary sibling and replace atomically where the harness supports this. Otherwise save a new version and explain. Preserve user-authored prose. Append one concise journal entry per logical change; journal entries do not recursively create journals. Use the handover template for current progress and next actions. Never claim a file was saved until the write succeeds and a read-back confirms it.
 
@@ -38,6 +38,6 @@ Optional scripts/companion.py uses Python's standard library for setup, task val
 
 Briefings work on demand. For a schedule, read skills/companion-care/SKILL.md. Record one owner app per job; never run duplicate schedules across apps. Confirm times, timezone, sources, local-device requirements and allowed actions. No unattended approval-requiring actions.
 
-Recommend backups to an organisation-approved, access-restricted location. Sync alone is not a tested backup. Never make a backup into the public repository. Ask before copying work data to a destination; do not silently create remote backups.
+Recommend backups to an organisation-approved, access-restricted location. Sync alone is not a tested backup. Track user-confirmed backup/restore dates and reminder preferences in the handover; offer due reminders at setup and weekly review without blocking work. Never make a backup into the public repository. Ask before copying work data to a destination; do not silently create remote backups.
 
 For upgrades, extract a clean release alongside the existing folder. Compare versions, back up with permission, preserve personal/ intact, review changes and test a restored copy before switching. Do not overwrite a populated folder with a ZIP. Custom skills stay in personal/ and remain separate from reviewed built-ins.

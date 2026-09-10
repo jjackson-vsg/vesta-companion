@@ -114,5 +114,44 @@ class CompanionTests(unittest.TestCase):
         with self.assertRaises(ValueError):c.import_tasks(export,self.root)
         self.assertEqual(raw,self.source.read_bytes())
 
+    def test_vault_starter_is_usable_and_private(self):
+        vault=self.root/"personal/vault"
+        for folder in ["inbox","knowledge","contacts","decisions","meetings","journal","attachments","archive"]:
+            self.assertTrue((vault/folder/"README.md").is_file())
+        home=(vault/"HOME.md").read_text()
+        self.assertIn("vault-conventions.md",home)
+        self.assertIn("type: index",home)
+        self.assertNotIn("{{date}}",home)
+        self.assertIn("source:",home)
+        settings=json.loads((vault/".obsidian/app.json").read_text())
+        self.assertEqual(settings["attachmentFolderPath"],"attachments")
+        self.assertEqual(json.loads((vault/".obsidian/community-plugins.json").read_text()),[])
+
+    def test_vault_init_preserves_existing_notes_and_settings(self):
+        vault=self.root/"personal/vault"
+        keep={vault/"HOME.md":"My existing index",vault/".obsidian/app.json":'{"userSetting":true}',
+              vault/"journal/old.md":"Existing progress",vault/"vault-conventions.md":"My conventions"}
+        for path,value in keep.items():path.write_text(value)
+        c.init(self.root)
+        for path,value in keep.items():self.assertEqual(path.read_text(),value)
+
+    def test_repeat_setup_is_idempotent(self):
+        files=lambda:{p.relative_to(self.root):p.read_bytes() for p in (self.root/"personal").rglob("*") if p.is_file()}
+        before=files();c.init(self.root);self.assertEqual(before,files())
+
+    def test_missing_vault_template_does_not_replace_existing_data(self):
+        home=self.root/"personal/vault/HOME.md";home.write_text("Existing user notes")
+        (self.root/"templates/vault/obsidian-app.json").unlink()
+        with self.assertRaises(OSError):c.init(self.root)
+        self.assertEqual(home.read_text(),"Existing user notes")
+
+    def test_optional_claude_template_adds_no_auto_allow(self):
+        settings=json.loads((ROOT/"templates/claude-settings.example.json").read_text())
+        self.assertEqual(settings["permissions"]["defaultMode"],"default")
+        self.assertNotIn("allow",settings["permissions"])
+        self.assertIn("Bash",settings["permissions"]["ask"])
+        self.assertIn("Read(./.env)",settings["permissions"]["deny"])
+
+
 if __name__=="__main__":
     unittest.main()

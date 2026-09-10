@@ -3,7 +3,7 @@ name: companion-care
 description: Help with backup, recovery, safe updates, connection checks and optional schedules. Use when the user asks to back up, move apps, upgrade or schedule briefings.
 license: Apache-2.0
 metadata:
-  version: "0.1.0-beta.1"
+  version: "0.1.0-beta.3"
   review-status: "beta-local-review"
 ---
 
@@ -17,6 +17,7 @@ metadata:
 6. Store non-secret schedule intent, owner, stable scheduler id and last verified status under personal/automations/. Inspect existing jobs before creating one. When moving apps, disable the old job with approval before activating the replacement. A registry file alone is not evidence a schedule exists.
 7. State whether the task needs an awake device, connected folder and valid connections. Use actual app evidence. Unattended briefings remain Microsoft 365 read-only, with local output only; queue actions requiring user approval.
 8. Connection health: check only tool availability/least-privilege reads the user requested. Record capability status, never connector configuration. Missing permissions route to the organisation's administrator.
-9. Save a journal and handover update. Do not claim backup, restoration, schedule or connection success without verification.
+9. Backup reminders: read the Backup care fields in personal/HANDOVER.md at setup and weekly review. If no backup is confirmed or its agreed interval has elapsed, offer one brief optional reminder. Honour a snooze or disabled reminders; record the date offered so it is not repeated on every chat. Keep working if the user declines. Record backup/restore dates only after evidence or explicit user confirmation, labelled accordingly.
+10. Save a journal and handover update. Do not claim backup, restoration, schedule or connection success without verification.
 
 Success: a verified, reversible action with its exact scope and remaining limitations recorded.

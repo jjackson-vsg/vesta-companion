@@ -123,7 +123,18 @@ def init(root=ROOT):
         ("templates/tasks.json", "personal/todo/tasks.json"),
     ]:
         atomic_write(safe_path(root, target), safe_path(root, source).read_bytes(), create_only=True)
-    atomic_write(safe_path(root,"personal/vault/HOME.md"), b"# My knowledge\n\nLink useful notes here as you create them.\n", create_only=True)
+    # Add missing starter files only. Existing notes and Obsidian settings are user-owned.
+    day = dt.datetime.now(dt.timezone.utc).date().isoformat()
+    starter_files = [(name, name) for name in ["HOME.md", "vault-conventions.md"]]
+    starter_files += [(folder + "/README.md", folder + "/README.md") for folder in
+                      ["inbox", "knowledge", "contacts", "decisions", "meetings", "journal", "attachments", "archive"]]
+    starter_files += [("obsidian-app.json", ".obsidian/app.json"),
+                      ("obsidian-community-plugins.json", ".obsidian/community-plugins.json")]
+    for template_name, target_name in starter_files:
+        source = safe_path(root, "templates/vault/" + template_name)
+        target = safe_path(root, "personal/vault/" + target_name)
+        content = source.read_text(encoding="utf-8").replace("{{date}}", day)
+        atomic_write(target, content.encode("utf-8"), create_only=True)
     atomic_write(safe_path(root,"personal/skills/INDEX.md"), b"# My skills\n\nApproved personal workflows appear here. No custom skills yet.\n", create_only=True)
     return render_board(root)
 

@@ -88,8 +88,24 @@ const fs=require("node:fs/promises"),path=require("node:path"),{pathToFileURL}=r
  await guide.setViewportSize({width:390,height:844});
  assert.equal(await guide.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  await guide.screenshot({path:path.join(qa,"guide-mobile.png"),fullPage:false});
+ const landing=await browser.newPage({viewport:{width:1440,height:1000}});
+ await landing.goto(pathToFileURL(path.join(root,"dist/site/index.html")).href);
+ assert.equal(await landing.getByRole("link",{name:"Get the latest kit",exact:true}).getAttribute("href"),"https://github.com/Vesta-Software-Group/vesta-companion/releases");
+ await landing.screenshot({path:path.join(qa,"site-desktop.png"),fullPage:true});
+ await landing.setViewportSize({width:390,height:844});
+ assert.equal(await landing.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ await landing.screenshot({path:path.join(qa,"site-mobile.png"),fullPage:true});
+ const demo=await browser.newPage({viewport:{width:1440,height:1050}});
+ await demo.goto(pathToFileURL(path.join(root,"dist/site/demo.html")).href);
+ for(const id of ["open-file","save","export","savebar"])assert.equal(await demo.locator("#"+id).isVisible(),false);
+ await demo.getByRole("button",{name:"+ Add a task",exact:true}).click();
+ await demo.locator("#f-title").fill("Fictional hosted demo task");
+ await demo.getByRole("button",{name:"Apply to board",exact:true}).click();
+ assert.equal(await demo.locator(".task").count(),4);
+ assert.match(await demo.locator(".help").textContent(),/Fictional demo only/);
+ await demo.screenshot({path:path.join(qa,"hosted-demo.png")});
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
- await fs.writeFile(path.join(qa,"browser-results.json"),JSON.stringify({result:"passed",checks:["filtering","adding","completion","XSS-safe display","export envelope","unsaved warnings","desktop/mobile layout","selected-file save/read-back via mocked OS handle","stale-source refusal","editing locked during save","byte-accurate BOM hashing","oversize save refusal","strict document fields","offline no HTTP requests","guide mobile layout"],limitations:["OS file picker permission UI mocked","no live agent or Microsoft 365 calls"]},null,2));
+ await fs.writeFile(path.join(qa,"browser-results.json"),JSON.stringify({result:"passed",checks:["filtering","adding","completion","XSS-safe display","export envelope","unsaved warnings","desktop/mobile layout","selected-file save/read-back via mocked OS handle","stale-source refusal","editing locked during save","byte-accurate BOM hashing","oversize save refusal","strict document fields","offline no HTTP requests","guide mobile layout","public landing links/layout","hosted fictional demo with file controls hidden"],limitations:["OS file picker permission UI mocked","no live agent or Microsoft 365 calls"]},null,2));
  console.log("PASS browser behaviour and responsive layout; no network requests. OS picker mocked.");
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exitCode=1});

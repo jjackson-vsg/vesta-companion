@@ -3,7 +3,7 @@ name: companion-review
 description: Prepare for meetings and run a weekly review from local notes and optional approved sources. Use for meeting preparation, end-of-week reflection or open-commitment reviews.
 license: Apache-2.0
 metadata:
-  version: "0.1.0-beta.1"
+  version: "0.1.0-beta.3"
   review-status: "beta-local-review"
 ---
 
@@ -15,5 +15,7 @@ metadata:
 4. Use companion-daily-brief's source coverage rules when accessing Outlook or Teams. Missing access is explicit; do not imply a complete connected review.
 5. Save personal/outputs/reviews or meeting-prep with dated filenames. Keep suggested task changes separate until confirmed. Use companion-planning for canonical task changes.
 6. Draft follow-ups only; never send mail. External posts and invitations require separate recipient/content approval. Verify local saves and update handover.
+
+For a weekly review, check the handover's Backup care fields and route to companion-care for a due reminder. Honour snoozes and do not repeat a reminder already offered within the agreed interval.
 
 Success: a concise source-linked preparation or review, with concrete decisions and next actions.
