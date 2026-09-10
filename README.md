@@ -4,7 +4,7 @@
 
 <p align="center"><a href="https://github.com/Vesta-Software-Group/vesta-companion/releases"><b>↓ GET VESTA COMPANION</b></a> &nbsp; · &nbsp; <a href="https://vesta-software-group.github.io/vesta-companion/guide.html">Quick-start guide</a> &nbsp; · &nbsp; <a href="docs/Quick-start.pdf">PDF</a> &nbsp; · &nbsp; <a href="https://github.com/Vesta-Software-Group/vesta-companion/releases">Release notes</a></p>
 
-> **Beta preview.** Use an approved desktop agent with local-folder access. App and Microsoft 365 availability varies; [check compatibility](docs/COMPATIBILITY.md).
+> **V1.0.0 — stable core kit.** Use an approved desktop agent with local-folder access. App and Microsoft 365 availability varies; [check compatibility](docs/COMPATIBILITY.md).
 
 ## A useful start in three steps
 
@@ -41,7 +41,7 @@ Edit tasks in chat or on the board. The canonical task file stays on disk. In su
 
 ## Use your preferred app
 
-| Beta target | How to start |
+| App profile | How to start |
 |---|---|
 | Codex desktop | Open the folder as the primary local project and send the starter message. |
 | ChatGPT Work Local | Attach the folder where local access is available; verify a save and read-back. |
@@ -56,6 +56,8 @@ App availability varies by version, OS, plan and company policy. Plain cloud cha
 Use your agent app's approved **Apps / Connectors / Integrations** settings for Outlook email, Outlook calendar and Teams. Select the relevant account and a useful Teams scope. Ask your administrator when approval is required. Never paste credentials into chat.
 
 The briefing workflow is **read-only in Microsoft 365**. It does not send email, post messages, mark mail read or change calendar events. If a source is unavailable, you get a clearly labelled partial or local-only brief. The kit does not contain its own Microsoft connector, create an app registration or bypass tenant policy. Scheduling is optional, with one owner app per job.
+
+If a connection is missing, check it in the specific app you are using; access in another app does not transfer automatically. For assignment or consent errors, ask IT about that app's approved connection. If Codex **Approve for me** causes problems, try **Ask for approval** (manual review) while keeping the sandbox enabled. This is not a confirmed fix for Windows command-start failures. [Troubleshooting and connection checks →](docs/TROUBLESHOOTING.md)
 
 ## Memory you can keep
 

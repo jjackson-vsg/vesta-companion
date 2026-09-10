@@ -1,19 +1,27 @@
-# Compatibility and honest limits
+# Compatibility and scope
 
-Beta target profiles: Codex desktop local folder; ChatGPT Work Local with local file tools; Claude Code Desktop local folder; Claude Cowork with connected folder access. Ordinary browser chat and hosted tasks need explicit file import/export; they do not automatically share your local vault.
+V1.0.0 is a stable release of the portable folder kit. The app provides tools, permissions and connectors; the kit cannot grant them. App availability varies by OS, version, plan and company policy.
 
-The kit has native .agents/skills and .claude/skills discovery wrappers plus an explicit skill index fallback. AGENTS.md and CLAUDE.md load the same shared instructions. For Cowork and ChatGPT modes that do not auto-load those files, use the starter prompt or paste adapters/<app>.md into the app's project/folder instructions. No adapter grants tools or permissions.
+| App profile | Reported evidence for v1.0 | Limits |
+|---|---|---|
+| Codex desktop on Windows | Local context retrieval, Outlook email summary, saved briefing/journal and read-back; no mailbox mutation reported | Tests encountered a Windows sandbox login issue and used an environment-specific workaround. Normal protected setup is not universally verified; see troubleshooting. Calendar/Teams were not tested. |
+| Claude Code | Cold-start setup offer, assistant rename saved in the profile, honest missing-connector handling | Microsoft 365 sign-in was blocked by enterprise-app assignment; live retrieval was not tested. |
+| ChatGPT Work Local | Folder adapter and shared skill index provided | No signed-in acceptance result supplied. |
+| Claude Cowork | Connected-folder adapter and shared skill index provided | No signed-in acceptance result supplied. |
+| Other capable local-file agents | Explicit instruction and skill-index fallback | Check local persistence and each integration before relying on it. |
 
-A successful release test of files and wrappers is not an end-to-end test in every app. The v0.1 beta has automated file/schema/board tests; actual signed-in cross-harness and Microsoft 365 testing plus nontechnical pilot evidence must be recorded in docs/TESTING.md before claiming full compatibility. App labels and availability can vary by OS, version, plan and organisational policy.
+These are user-reported tests on the beta.3 core carried into v1.0 without helper or board behaviour changes. Exact app build numbers were not supplied. This is not universal app certification or proof of sandbox enforcement. OpenAI approval-mode guidance and basic Microsoft 365 checks are in [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
-## Startup check for each app
-1. Open this folder locally and send the starter prompt.
-2. Have the agent identify the shared instructions and find the daily-brief skill.
-3. Create a fictional note and a task under personal/; reopen both from disk.
-4. Start a new task, retrieve that note, and update the task.
-5. Switch to another supported app and retrieve the same files.
-6. Test missing connectors, failed writes and a denied destructive request.
+The kit has .agents/skills and .claude/skills discovery wrappers plus a shared index. AGENTS.md and CLAUDE.md load the same shared instructions. When an app does not auto-load them, use the starter prompt or the relevant adapters/<app>.md. Ordinary hosted chats need explicit file import/export; they do not automatically share your local vault.
 
-Do not use a Git worktree for the user's live memory: ignored personal files may be missing and parallel copies diverge. Use a local folder; only one agent writes at a time. Claude Code's Windows installation currently documents Git for Windows. Other app prerequisites belong to the vendor, not this ZIP.
+## Check before relying on a new app
 
-Sources checked 2026-09-09: [OpenAI projects](https://learn.chatgpt.com/docs/projects), [OpenAI skills](https://learn.chatgpt.com/docs/build-skills), [Work Local](https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security), [Claude Desktop](https://code.claude.com/docs/en/desktop), [Claude skills](https://code.claude.com/docs/en/skills), [Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork), [Agent Skills](https://agentskills.io/specification).
+1. Open the kit as the primary local folder and send the starter prompt.
+2. Have the agent identify the shared instructions and daily-brief skill.
+3. Save a harmless note and task under personal/ and read both back.
+4. Start a new conversation, retrieve the saved files and update the task.
+5. Check each connector separately and confirm missing sources are labelled.
+
+Use one writer at a time. Do not use a Git worktree for live personal memory: ignored files may be absent and parallel copies can diverge. Native app prerequisites belong to the vendor, not this ZIP. Keep the app's sandbox and approval controls enabled.
+
+Vendor references: [OpenAI projects](https://learn.chatgpt.com/docs/projects), [OpenAI skills](https://learn.chatgpt.com/docs/build-skills), [Work Local](https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security), [Claude Desktop](https://code.claude.com/docs/en/desktop), [Claude skills](https://code.claude.com/docs/en/skills), [Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork), [Agent Skills](https://agentskills.io/specification). Product labels and prerequisites can change.

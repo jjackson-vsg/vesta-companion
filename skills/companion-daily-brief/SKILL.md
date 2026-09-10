@@ -3,8 +3,8 @@ name: companion-daily-brief
 description: Create a daily briefing from Outlook email, Outlook calendar, Microsoft Teams and local priorities. Use for morning briefs, daily catch-ups or a review of today's commitments.
 license: Apache-2.0
 metadata:
-  version: "0.1.0-beta.1"
-  review-status: "beta-local-review"
+  version: "1.0.0"
+  review-status: "local-technical-review"
 ---
 
 # companion daily brief

@@ -1,14 +1,14 @@
 # Test evidence
 
-Version: 0.1.0-beta.3
+Version: 1.0.0
 Checked: 2026-09-10
-Status: local technical checks passed; signed-in app and Microsoft 365 pilot pending.
+Status: stable core release authorised after scoped user-reported app tests; remaining limitations are explicit below.
 
 ## Executed checks
 
 | Check | Actual result |
 |---|---|
-| Python standard-library suite | 24 tests passed: additive vault setup, metadata/date substitution, existing notes/config preservation, idempotent setup, persistent imports, revision/hash conflicts, removal refusal, malformed data, locking, traversal, HTML escaping, optional settings and release/site isolation. |
+| Python standard-library suite | 25 tests passed: safe upgrade preservation, additive vault setup, metadata/date substitution, existing notes/config preservation, idempotent setup, persistent imports, revision/hash conflicts, removal refusal, malformed data, locking, traversal, HTML escaping, optional settings and release/site isolation. |
 | Offline task board in headless Microsoft Edge | Passed adding, editing, filtering, completion, export format, unsaved warnings, responsive layout and script-tag display as plain text. No HTTP requests observed. |
 | Selected-file saving | Save/read-back, rejection of changed source files, locking of editing during a save, exact-byte BOM hashing, strict document fields and oversized-save refusal passed. The OS picker and file handle were mocked; the board's real application code ran. |
 | User guide | 12 A4 PDF pages generated from the shipped HTML. All pages rendered and visually reviewed; layout checks found no content/footer overlap. Mobile HTML checked for horizontal overflow. |
@@ -16,13 +16,24 @@ Status: local technical checks passed; signed-in app and Microsoft 365 pilot pen
 | Extracted release smoke check | The actual ZIP was extracted into a fresh temporary folder. Setup created empty personal state and rendered the board successfully. |
 | Dependency review | Original core instructions and code; no third-party skill code, runtime bundle, installer, telemetry or remote asset dependencies. Maintainer PDF/browser checks use an already installed Playwright and Edge. |
 
-These results are local technical evidence, not an independent security audit or proof of model compliance. The browser OS permission prompt was not exercised, and no live Microsoft 365 messages were read for these checks.
+These results are local technical evidence, not an independent security audit or proof of model compliance. The browser OS permission prompt was not exercised. Automated checks used fictional inputs; the separate user-reported Outlook check below used a live connection.
 
-## Acceptance before v1.0
+## User-reported acceptance results
 
-Use [V1-ACCEPTANCE.md](V1-ACCEPTANCE.md) for the bounded release gate: one actual app/colleague session, persistence and task-board save checks, basic boundaries and a safe upgrade. Declare exactly which apps and connectors were verified. Broader combinations can remain explicitly unverified and continue after v1.0; known data-loss or unsafe-action defects still block release.
+Reported 2026-09-10 against beta.3. The v1.0 core helper and board behaviour are unchanged. Reports are supplied by the maintainer; the release agent did not independently observe the signed-in sessions. App build numbers were not supplied.
 
-The scenario expectations in [SKILL-REVIEW.md](SKILL-REVIEW.md) remain useful for broader coverage. Do not describe any app or connector check as passed without evidence.
+| Reported check | Result and scope |
+|---|---|
+| Codex desktop / Windows local start | Initial command launch failed with Windows error 1907; update/restart did not resolve it. An environment-specific workaround allowed local context retrieval. This does not verify normal protected setup or establish a kit fix. |
+| Codex Outlook email summary | Relevant messages and later corrections were incorporated; answered items were distinguished. This was an email-only check, not a complete calendar/Teams briefing. |
+| Codex local persistence | Briefing and journal were saved and read back successfully. |
+| Codex mailbox boundary | No sending, moving, deletion or marking read was reported. |
+| Claude Code cold start and customisation | Missing profile triggered guided setup; assistant-name change was saved to the personal profile without fabricated fields. |
+| Claude Code unavailable Microsoft 365 | Enterprise application assignment blocked sign-in. The assistant correctly stated no reachable email/calendar/Teams tools and did not fabricate a summary. |
+
+Calendar, live Teams, attachments, connector writes, broad sandbox enforcement, adversarial app behaviour, a fresh-chat cross-app round trip, native browser permission UI, a personal-skill end-to-end run and a separate timed nontechnical pilot remain unverified. Connector writes are not part of the read-only briefing workflow. The maintainer accepted these limits for stable-core promotion; [V1-ACCEPTANCE.md](V1-ACCEPTANCE.md) records the decision.
+
+An oversized retrieval response was truncated in the reported email session; compact inspection of the retained response recovered coverage. No universal retrieval-efficiency claim is made. A local Windows account/policy issue remains unresolved. No repair commands or reduced-isolation settings are shipped or recommended; [TROUBLESHOOTING.md](TROUBLESHOOTING.md) provides bounded guidance.
 
 ## Reproduce the technical checks
 
@@ -56,4 +67,8 @@ Beta.3 guide verification: all twelve pages were rendered. Pages 1, 2, 8, 11 and
 
 ## V1 preparation: update guidance and regression coverage
 
-The published beta.2 and beta.3 ZIPs passed a local Windows upgrade rehearsal with fictional personal state. The original folder and all pre-existing authoritative personal files retained identical bytes; new starter files were added, the task/status survived board regeneration and a recovery copy matched. A new regression test covers the same preservation boundary. This is a file-level check, not signed-in app or human-pilot evidence. All 25 tests passed locally after adding this regression. The published beta.3 remains unchanged while acceptance proceeds.
+The published beta.2 and beta.3 ZIPs passed a local Windows upgrade rehearsal with fictional personal state. The original folder and all pre-existing authoritative personal files retained identical bytes; new starter files were added, the task/status survived board regeneration and a recovery copy matched. A new regression test covers the same preservation boundary. This is a file-level check, not signed-in app or human-pilot evidence. All 25 tests passed locally after adding this regression. The previous beta.3 release remains available unchanged; its immutable assets are retained.
+
+## V1.0 final technical checks
+
+All 25 local tests and the browser suite passed on the v1.0 candidate. All twelve PDF pages were rendered: changed pages 1, 3, 6, 11 and 12 were visually checked; pages 2, 4, 5, 7, 8, 9 and 10 matched the previously reviewed PDF renders. Layout, public-content and document-link checks passed. The release remains limited to reviewed public files and contains no account details or raw user test content.
