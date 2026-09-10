@@ -3,8 +3,8 @@ name: companion-memory
 description: Remember and recall preferences, decisions, knowledge and progress from local files. Use when the user asks to remember, retrieve context, resume work or switch apps.
 license: Apache-2.0
 metadata:
-  version: "0.1.0-beta.3"
-  review-status: "beta-local-review"
+  version: "1.0.0"
+  review-status: "local-technical-review"
 ---
 
 # companion memory

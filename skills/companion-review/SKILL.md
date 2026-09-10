@@ -3,8 +3,8 @@ name: companion-review
 description: Prepare for meetings and run a weekly review from local notes and optional approved sources. Use for meeting preparation, end-of-week reflection or open-commitment reviews.
 license: Apache-2.0
 metadata:
-  version: "0.1.0-beta.3"
-  review-status: "beta-local-review"
+  version: "1.0.0"
+  review-status: "local-technical-review"
 ---
 
 # companion review

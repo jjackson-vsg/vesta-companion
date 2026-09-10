@@ -97,3 +97,4 @@ VERSION
 docs/UPDATING.md
 docs/V1-ACCEPTANCE.md
 tests/test_upgrade.py
+docs/TROUBLESHOOTING.md

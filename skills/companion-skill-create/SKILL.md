@@ -3,8 +3,8 @@ name: companion-skill-create
 description: Create or improve a personal reusable skill from a user's workflow. Use when the user asks to teach the assistant a repeatable process or add a custom skill.
 license: Apache-2.0
 metadata:
-  version: "0.1.0-beta.1"
-  review-status: "beta-local-review"
+  version: "1.0.0"
+  review-status: "local-technical-review"
 ---
 
 # companion skill create

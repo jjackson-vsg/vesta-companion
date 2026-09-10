@@ -3,8 +3,8 @@ name: companion-care
 description: Help with backup, recovery, safe updates, connection checks and optional schedules. Use when the user asks to back up, move apps, upgrade or schedule briefings.
 license: Apache-2.0
 metadata:
-  version: "0.1.0-beta.3"
-  review-status: "beta-local-review"
+  version: "1.0.0"
+  review-status: "local-technical-review"
 ---
 
 # companion care
