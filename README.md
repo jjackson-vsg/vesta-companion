@@ -63,6 +63,10 @@ Your profile, notes, tasks, projects and custom skills live under **personal/**.
 
 Before switching apps, ask your Companion to save progress and update its handover. The next app can read the same files. Only one active writer should use a personal folder at a time. The handover tracks your last confirmed backup and restore check, with reminders you can snooze or turn off.
 
+## Already using Companion?
+
+Download the newest **vesta-companion.zip** from the release's **Assets** section and extract it into a separate new folder. Ask your current assistant to help copy your personal files and verify your profile, notes, tasks and custom skills before switching. Keep your old folder intact. [Step-by-step update guidance →](docs/UPDATING.md)
+
 ## Keep it private
 
 - Use a private local folder or an approved, personally restricted synced location.

@@ -18,14 +18,11 @@ Status: local technical checks passed; signed-in app and Microsoft 365 pilot pen
 
 These results are local technical evidence, not an independent security audit or proof of model compliance. The browser OS permission prompt was not exercised, and no live Microsoft 365 messages were read for these checks.
 
-## Pilot gates before stable release
+## Acceptance before v1.0
 
-- Signed-in Codex, ChatGPT Work Local, Claude Code Desktop and Cowork: setup, local write/read-back, fresh task retrieval and cross-app handover on target devices. Record exact app/OS versions.
-- Outlook email/calendar and Teams: successful read-only briefing, missing permissions, pagination, timezone differences, source citations, partial failures and prompt-injection attempts.
-- Native browser file selection and saving on supported target browsers; export/import fallback on a browser without direct file access.
-- Representative nontechnical setup, a useful first workflow, personal skill creation, backup and restore rehearsal.
+Use [V1-ACCEPTANCE.md](V1-ACCEPTANCE.md) for the bounded release gate: one actual app/colleague session, persistence and task-board save checks, basic boundaries and a safe upgrade. Declare exactly which apps and connectors were verified. Broader combinations can remain explicitly unverified and continue after v1.0; known data-loss or unsafe-action defects still block release.
 
-The expected behaviour and outstanding agent scenarios are in [SKILL-REVIEW.md](SKILL-REVIEW.md). Do not describe these pilot gates as passed until evidence is recorded.
+The scenario expectations in [SKILL-REVIEW.md](SKILL-REVIEW.md) remain useful for broader coverage. Do not describe any app or connector check as passed without evidence.
 
 ## Reproduce the technical checks
 
@@ -56,3 +53,7 @@ Added the repository address and a direct ZIP download link to the Get started p
 - Full signed-in model behaviour, connector access and a timed nontechnical setup pilot remain outstanding.
 
 Beta.3 guide verification: all twelve pages were rendered. Pages 1, 2, 8, 11 and 12 were visually inspected; the other seven rendered pages match beta.2. Browser checks also passed for the public landing page and interactive fictional demo, including hidden file controls and mobile layout.
+
+## V1 preparation: update guidance and regression coverage
+
+The published beta.2 and beta.3 ZIPs passed a local Windows upgrade rehearsal with fictional personal state. The original folder and all pre-existing authoritative personal files retained identical bytes; new starter files were added, the task/status survived board regeneration and a recovery copy matched. A new regression test covers the same preservation boundary. This is a file-level check, not signed-in app or human-pilot evidence. All 25 tests passed locally after adding this regression. The published beta.3 remains unchanged while acceptance proceeds.

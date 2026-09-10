@@ -94,3 +94,6 @@ tests/test_companion.py
 tests/test_release.py
 tests/test_site.py
 VERSION
+docs/UPDATING.md
+docs/V1-ACCEPTANCE.md
+tests/test_upgrade.py
