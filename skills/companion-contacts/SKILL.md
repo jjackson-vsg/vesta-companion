@@ -3,7 +3,7 @@ name: companion-contacts
 description: Maintain a professional contact book and retrieve relationship context. Use to remember a contact, prepare for a conversation or find previous commitments.
 license: Apache-2.0
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   review-status: "local-technical-review"
 ---
 

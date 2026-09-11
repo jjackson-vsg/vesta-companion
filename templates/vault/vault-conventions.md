@@ -33,3 +33,7 @@ Re-read before editing, preserve user-authored prose and stop on conflicting edi
 ## Backups and switching apps
 
 Use one writer at a time. Update personal/HANDOVER.md before switching apps. The handover records the last user-confirmed backup and restore check. A reminder does not perform a backup; a synced folder is not proof of recovery. Ask for approval of the destination and copy before backing up.
+
+## Optional workflow notes
+
+Create these only when needed: personas/ for explicitly saved simulation profiles; reports/candidates/ for owner-approved report summaries; commitments/ for source-linked promises and history. Additional note types are simulation-profile, report-candidate and commitment. Their workflow status can be draft/approved, pending-owner-approval/approved/excluded or open/fulfilled/cancelled respectively. Confidence remains confirmed, inferred or uncertain. A simulation is never real feedback. Task execution still belongs in tasks.json; flag contradictions rather than silently maintaining two task lists. Honour session-only requests across notes, outputs and journals.

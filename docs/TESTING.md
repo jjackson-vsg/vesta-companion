@@ -1,17 +1,17 @@
 # Test evidence
 
-Version: 1.0.0
-Checked: 2026-09-10
-Status: stable core release authorised after scoped user-reported app tests; remaining limitations are explicit below.
+Version: 1.1.0
+Checked: 2026-09-11
+Status: additive workflow release; prior scoped app evidence is retained and limitations remain explicit.
 
 ## Executed checks
 
 | Check | Actual result |
 |---|---|
-| Python standard-library suite | 25 tests passed: safe upgrade preservation, additive vault setup, metadata/date substitution, existing notes/config preservation, idempotent setup, persistent imports, revision/hash conflicts, removal refusal, malformed data, locking, traversal, HTML escaping, optional settings and release/site isolation. |
+| Python standard-library suite | 28 tests passed (27-test full run plus the new site-link test and repeated site checks): safe upgrade preservation, additive vault setup, metadata/date substitution, existing notes/config preservation, idempotent setup, persistent imports, revision/hash conflicts, removal refusal, malformed data, locking, traversal, HTML escaping, optional settings and release/site isolation. |
 | Offline task board in headless Microsoft Edge | Passed adding, editing, filtering, completion, export format, unsaved warnings, responsive layout and script-tag display as plain text. No HTTP requests observed. |
 | Selected-file saving | Save/read-back, rejection of changed source files, locking of editing during a save, exact-byte BOM hashing, strict document fields and oversized-save refusal passed. The OS picker and file handle were mocked; the board's real application code ran. |
-| User guide | 12 A4 PDF pages generated from the shipped HTML. All pages rendered and visually reviewed; layout checks found no content/footer overlap. Mobile HTML checked for horizontal overflow. |
+| User guide | 13 A4 PDF pages generated from the shipped HTML. All pages rendered and visually reviewed; layout checks found no content/footer overlap. Mobile HTML checked for horizontal overflow. |
 | Public packaging | Explicit reviewed allowlist. Tests confirm private sentinel files never enter the ZIP, unsafe paths are rejected and unchanged inputs produce identical archive bytes. Release build verifies every archive entry against the SHA-256 manifest. |
 | Extracted release smoke check | The actual ZIP was extracted into a fresh temporary folder. Setup created empty personal state and rendered the board successfully. |
 | Dependency review | Original core instructions and code; no third-party skill code, runtime bundle, installer, telemetry or remote asset dependencies. Maintainer PDF/browser checks use an already installed Playwright and Edge. |
@@ -72,3 +72,11 @@ The published beta.2 and beta.3 ZIPs passed a local Windows upgrade rehearsal wi
 ## V1.0 final technical checks
 
 All 25 local tests and the browser suite passed on the v1.0 candidate. All twelve PDF pages were rendered: changed pages 1, 3, 6, 11 and 12 were visually checked; pages 2, 4, 5, 7, 8, 9 and 10 matched the previously reviewed PDF renders. Layout, public-content and document-link checks passed. The release remains limited to reviewed public files and contains no account details or raw user test content.
+
+## V1.1 workflow expansion and upgrade check
+
+Twelve instruction workflows and five templates were added without changing the core task helper, board source, personal/ layout or JSON schema. All 21 skills passed metadata validation; tests verify index/native discovery and referenced local documents. A small fictional reasoning walkthrough covers corrected/capped inbox evidence, approved-only report candidates and missing persona assumptions; see WORKFLOW-CHECKS.md. These are release-assistant walkthroughs, not independent or live app evaluations.
+
+The actual published v1.0.0 ZIP was verified against its manifest, extracted and populated with fictional profile, knowledge, custom-skill and task state. After copying personal/ to a clean v1.1 candidate and running additive setup, every authoritative personal file retained identical bytes, the original folder was unchanged and the waiting task/revision survived board regeneration. Existing vault conventions were preserved.
+
+All thirteen guide pages were rendered and visually reviewed. Browser checks passed; hosted Markdown documentation links are rewritten to the public repository and covered by a regression test. No new runtime, legacy workspace, framework, private context or connector configuration is included. Live connector and native OS-picker limits above remain unchanged.

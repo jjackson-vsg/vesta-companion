@@ -17,6 +17,12 @@ Personal skills and their index are copied with personal/. If you customised fil
 
 If your agent cannot access both folders, add the new folder using its normal approved folder controls or ask for guided manual copy steps. Do not switch to a bypass mode. A retained old folder is a recovery copy on the same device; it does not replace your normal approved backup.
 
+## V1.0.0 to v1.1.0
+
+The personal/ layout and task JSON schema are unchanged. Copy the complete personal/ folder using the steps above. No data-format conversion or new dependencies are required. New report, persona and commitment folders are created only when you choose to use those workflows. Existing user notes and vault conventions are preserved; the assistant can consult the new shipped templates without overwriting your conventions.
+
 ## What has been verified
 
 A rehearsal using the published beta.2 and beta.3 ZIPs passed on Windows with fictional profile, handover, notes, tasks, custom skills, legacy journals and Obsidian preferences. Every pre-existing authoritative personal file retained identical bytes, the original folder was unchanged, the new board showed the existing task/status, and a recovery copy matched. This establishes the file-copy route; it does not claim that every agent app has been tested.
+
+V1.1 verification also used the published v1.0.0 ZIP with fictional data: existing personal files and original folder retained identical bytes; task revision/status and custom skills were preserved. No format conversion was required.

@@ -18,6 +18,10 @@ Give your assistant a name, tell it what matters to you, and try one useful task
 
 **[Read the illustrated guide online](https://vesta-software-group.github.io/vesta-companion/guide.html)**, or open **START-HERE.html** after unzipping. A [PDF copy](docs/Quick-start.pdf) is included too.
 
+## New in v1.1
+
+**21 built-in skills**, with inbox triage, email drafting, Teams catch-up, weekly reports, audience simulations, decision decks and structured development support. The same simple setup and personal folder; no new runtime or connector installation. [What changed →](RELEASE-NOTES.md)
+
 ## Make room for the work that matters
 
 | Ask naturally | Your Companion helps you… |
@@ -28,6 +32,12 @@ Give your assistant a name, tell it what matters to you, and try one useful task
 | “Tell me about this contact.” | Retrieve supported professional context and linked commitments. |
 | “Help me plan this project.” | Define an outcome, milestones, evidence and next actions. |
 | “Prepare me for this meeting.” | Gather relevant context, questions and decisions needed. |
+| “Review my inbox and draft a reply.” | Identify supported follow-ups and prepare an unsent local draft. |
+| “Catch me up on this Teams channel.” | Summarise a chosen channel and time window without posting. |
+| “Draft my weekly update.” | Use report candidates you approved, with outcomes, decisions and risks. |
+| “Review this plan as a new customer.” | Test audience assumptions with clearly labelled simulations. |
+| “Turn this evidence into a decision deck.” | Produce a self-contained HTML deck with traceable evidence. |
+| “Who promised what?” | Retrieve source-linked commitments and flag conflicting task status. |
 | “Review my week.” | Find progress, blockers and open commitments. |
 | “Create a skill for my monthly update.” | Draft and test a personal workflow, with explicit access boundaries. |
 
