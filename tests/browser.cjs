@@ -84,7 +84,7 @@ const fs=require("node:fs/promises"),path=require("node:path"),{pathToFileURL}=r
  // Check guide page count and local links.
  const guide=await browser.newPage({viewport:{width:1440,height:1100}});
  await guide.goto(pathToFileURL(path.join(root,"START-HERE.html")).href);
- assert.equal(await guide.locator(".page").count(),12);
+ assert.equal(await guide.locator(".page").count(),13);
  await guide.setViewportSize({width:390,height:844});
  assert.equal(await guide.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  await guide.screenshot({path:path.join(qa,"guide-mobile.png"),fullPage:false});

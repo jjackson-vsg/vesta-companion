@@ -3,7 +3,7 @@ name: companion-setup
 description: Guide first-time setup and customise the assistant name, profile, language and preferences. Use on first use or when the user asks to set up or personalise Companion.
 license: Apache-2.0
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   review-status: "local-technical-review"
 ---
 

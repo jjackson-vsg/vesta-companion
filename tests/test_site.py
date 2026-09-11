@@ -23,6 +23,11 @@ class SiteTests(unittest.TestCase):
         demo=(out/"demo.html").read_text(encoding="utf-8")
         self.assertIn("Fictional demo only",demo)
         self.assertIn('document.getElementById(id).hidden=true',demo)
+    def test_hosted_workflow_links_resolve_to_public_docs(self):
+        out=build_site.build(self.root)
+        guide=(out/"guide.html").read_text(encoding="utf-8")
+        self.assertNotIn('href="docs/',guide)
+        self.assertIn('https://github.com/Vesta-Software-Group/vesta-companion/blob/main/docs/WORKFLOWS.md',guide)
     def test_site_refuses_unexpected_leftovers(self):
         out=self.root/"dist/site";out.mkdir(parents=True);(out/"private.txt").write_text("keep me private")
         with self.assertRaises(ValueError):build_site.build(self.root)

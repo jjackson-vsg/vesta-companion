@@ -1,5 +1,6 @@
 """Build only the public landing page, guide, PDF and fictional demo for Pages."""
 from pathlib import Path
+import re
 import companion
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,7 +15,7 @@ def build(root=ROOT):
     if extras:
         raise ValueError("Unexpected site outputs; review before publishing")
     html = (root/"START-HERE.html").read_text(encoding="utf-8")
-    html = html.replace('href="docs/COMPATIBILITY.md"', 'href="https://github.com/Vesta-Software-Group/vesta-companion/blob/main/docs/COMPATIBILITY.md"')
+    html = re.sub(r'href="(docs/[A-Za-z0-9_./-]+\.md(?:#[A-Za-z0-9_-]+)?)"', lambda m: 'href="https://github.com/Vesta-Software-Group/vesta-companion/blob/main/'+m.group(1)+'"', html)
     demo = (root/"examples/board.html").read_text(encoding="utf-8")
     demo = demo.replace("Fictional demo tasks. Your own board starts empty.", "Interactive preview with fictional tasks. Keep real work in your local kit.")
     # A hosted preview is for fictional data only. Hide local-file/import/export controls.

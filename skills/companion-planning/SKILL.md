@@ -3,7 +3,7 @@ name: companion-planning
 description: Prioritise work, make plans and maintain the local to-do list and HTML board. Use when the user supplies tasks, asks what to do next, or wants to update their board.
 license: Apache-2.0
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   review-status: "local-technical-review"
 ---
 

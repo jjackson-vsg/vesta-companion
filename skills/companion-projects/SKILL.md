@@ -3,7 +3,7 @@ name: companion-projects
 description: Plan and track small projects with milestones, decisions and next actions. Use to start a project, review progress, resolve blockers or produce a project update.
 license: Apache-2.0
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   review-status: "local-technical-review"
 ---
 
